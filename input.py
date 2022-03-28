@@ -54,7 +54,7 @@ def load_uploaded_image(content_file, image_size=(256, 256), preserve_aspect_rat
   """Loads and preprocesses images."""
   # Cache image file locally.
   image = Image.open(content_file)
-  img_byte_arr = io.BytesIO()
+  img_byte_arr =  io.BytesIO()
   image.save(img_byte_arr, format='PNG')
   img_byte_arr = img_byte_arr.getvalue()
   # Load and convert to float32 numpy array, add batch dimension, and normalize to range [0, 1].
